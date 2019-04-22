@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PopularMovie2</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="error_message">Failed to get results, please try again.</string>
+</resources>
