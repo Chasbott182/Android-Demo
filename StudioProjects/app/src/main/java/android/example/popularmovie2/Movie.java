@@ -1,34 +1,74 @@
 package android.example.popularmovie2;
 
+
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+import android.widget.CheckBox;
+
+@Entity(tableName = "tableMovie")
 public class Movie {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String movieName;
     private String description;
     private String image;
     private String releaseDate;
     private String badkdropImage;
     private String vote;
+    @ColumnInfo(name = "favorite_bool")
+    private Boolean favorite;
     /**
      * No args constructor for use in serialization
      */
-    public Movie() {
-    }
 
-    public Movie(String mainName, String description, String image, String releaseDate, String badkdropImage, String vote) {
-        this.movieName = mainName;
+
+
+    @Ignore
+    public Movie(String movieName, String description, String image, String releaseDate, String badkdropImage, String vote) {
+        this.movieName = movieName;
         this.description = description;
         this.image = image;
         this.releaseDate = releaseDate;
         this.badkdropImage = badkdropImage;
         this.vote = vote;
     }
+   /* @Ignore
+    public MovieReview() {
 
-    public String getMainName() {
+    }
+    @Ignore
+    public MovieTrailer() {
+
+    }*/
+    public Movie(String movieName, String description, String image, String releaseDate, String badkdropImage, String vote, Boolean favorite) {
+        this.movieName = movieName;
+        this.description = description;
+        this.image = image;
+        this.releaseDate = releaseDate;
+        this.badkdropImage = badkdropImage;
+        this.vote = vote;
+        this.favorite = favorite;
+    }
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMovieName() {
         return movieName;
     }
 
-    public void setMainName(String mainName) {
-        this.movieName = mainName;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
     public String getDescription() {
@@ -69,6 +109,14 @@ public class Movie {
 
     public void setVote(String vote) {
         this.vote = vote;
+    }
+
+    public Boolean getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(Boolean favorite) {
+        this.favorite = favorite;
     }
 
 }

@@ -1,45 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Detail">
-
+    tools:context="Detail"
+    android:background="@android:color/black"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_big_title"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:text="Movie Name"
-        android:textSize="50sp"
+        android:layout_height="wrap_content"
         android:paddingLeft="32sp"
-        android:paddingTop="40dp"/>
+        android:paddingTop="20dp"
+        android:text="Movie Name"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/iv_movie_display"
-        android:layout_width="170dp"
-        android:layout_height="247dp"
-        android:padding="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
         android:layout_below="@+id/tv_big_title"
-        android:contentDescription="Movie Image" />
+        android:contentDescription="Movie Image"
+        android:padding="16sp"
+        android:src="@mipmap/ic_launcher" />
 
+    <TextView
+        android:id="@+id/tv_vote"
+        android:layout_width="209dp"
+        android:layout_height="30dp"
+        android:paddingLeft="32sp"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/tv_release"
+        android:layout_toRightOf="@+id/iv_movie_display"
+        android:text="Vote Average" />
+
+    <TextView
+        android:id="@+id/tv_release"
+        android:layout_width="209dp"
+        android:layout_height="30dp"
+        android:paddingLeft="32sp"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/tv_big_title"
+        android:layout_toRightOf="@+id/iv_movie_display"
+        android:text="Release Date" />
+
+    <TextView
+        android:id="@+id/tv_favotite"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_big_title"
+        android:paddingLeft="32sp"
+        android:text="Favotite"
+        android:textColor="@android:color/white" />
+
+    <CheckBox
+        android:id="@+id/cb_favorite"
+        android:key="star_favorites"
+        android:layout_width="114dp"
+        android:layout_height="94dp"
+        android:button="@android:color/transparent"
+        android:background="@drawable/custom_star"/>
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
     <TextView
         android:id="@+id/description_tv"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:text="Movie Description"
-        android:textSize="16sp"
-        android:padding="16sp"
-        android:layout_below="@+id/iv_movie_display"/>
-    <TextView
-        android:id="@+id/movie_details_tv"
-        android:text="Movie details"
-        android:layout_width="230dp"
-        android:layout_height="247dp"
-        android:padding="16sp"
-        android:layout_toRightOf="@id/iv_movie_display"
-        android:layout_below="@+id/tv_big_title"/>
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/tv_vote"
+        android:paddingLeft="32sp"
+        android:text="Movie Description:"
+        android:textSize="16sp" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/iv_trailer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description_tv"
+        android:contentDescription="Movie Image"
+        android:src="@mipmap/ic_launcher"
+        android:padding="16sp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

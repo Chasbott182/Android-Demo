@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">PopularMovie2</string>
+    <string name="settings">Settings</string>
+    <string name="app_name">Popular Movie</string>
     <string name="popular">Popular</string>
+    <string name="pref_popular" translatable="false">sort_popular</string>
     <string name="top_rated">Top Rated</string>
+    <string name="pref_top_rated" translatable="false">sort_top_rated</string>
+    <string name="favorites">Favorites</string>
+    <string name="pref_favorites" translatable="false">sort_favorites</string>
+    <string name="API_KEY">8d93b21d46b32209f68e585f3dc07a4f</string>
     <string name="error_message">Failed to get results, please try again.</string>
 </resources>
